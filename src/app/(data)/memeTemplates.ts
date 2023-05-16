@@ -1,26 +1,26 @@
 import { MemeTemplate } from "./types";
 
-const templates: MemeTemplate[] = [
+const memeTemplates: MemeTemplate[] = [
   {
-    id: 'disaster-girl',
+    id: "disaster-girl",
     background: {
-      src: '/disaster-girl.jpg',
+      src: "/disaster-girl.jpg",
       width: 1200,
       height: 900,
-      alt: 'Disaster Girl'
+      alt: "Disaster Girl",
     },
     textareas: [
       {
-        id: 'tagline',
+        id: "tagline",
         top: 750,
         left: 100,
         width: 900,
         height: 130,
-        text: 'Something Funny',
+        text: "Something Funny",
         fontSize: 100,
-        color: 'white'
-      }
-    ]
+        color: "white",
+      },
+    ],
   },
   {
     id: "drake",
@@ -51,7 +51,7 @@ const templates: MemeTemplate[] = [
         fontSize: 100,
         color: "black",
       },
-    ]
+    ],
   },
   {
     id: "guy-looking",
@@ -70,7 +70,7 @@ const templates: MemeTemplate[] = [
         height: 320,
         text: "New",
         fontSize: 120,
-        color: 'white'
+        color: "white",
       },
       {
         id: "person",
@@ -80,7 +80,7 @@ const templates: MemeTemplate[] = [
         height: 300,
         text: "Person",
         fontSize: 80,
-        color: 'white'
+        color: "white",
       },
       {
         id: "old",
@@ -90,10 +90,10 @@ const templates: MemeTemplate[] = [
         height: 320,
         text: "Old",
         fontSize: 100,
-        color: 'white'
+        color: "white",
       },
-    ]
-  }
-]
+    ],
+  },
+];
 
-export default templates;
+export default memeTemplates;
