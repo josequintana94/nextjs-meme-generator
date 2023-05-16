@@ -1,48 +1,4 @@
-import { Anton } from "next/font/google";
-import Image from "next/image";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
-
-const MemeDisplay = ({
-  background,
-}: {
-  background: {
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
-  };
-}) => {
-  return (
-    <div className="relative">
-      <Image
-        src={background.src}
-        width={background.width}
-        height={background.height}
-        alt={background.alt}
-      />
-      <div
-        className="absolute"
-        style={{
-          top: 760,
-          left: 100,
-          width: 1000,
-          height: 100,
-        }}
-      >
-        <div
-          className={`${anton.className} text-center text-white text-stroke-white`}
-          style={{
-            fontSize: 100,
-            lineHeight: "1.1",
-          }}
-        >
-          Really?
-        </div>
-      </div>
-    </div>
-  );
-};
+import MemeDisplay from "./(components)/MemeDisplay";
 
 export default function Home() {
   return (
@@ -54,6 +10,18 @@ export default function Home() {
           height: 900,
           alt: "Disaster Girl",
         }}
+        textareas={[
+          {
+            id: "saying",
+            top: 750,
+            left: 100,
+            width: 1000,
+            height: 100,
+            fontSize: 100,
+            color: "white",
+            text: "I'm gonna be rich!",
+          },
+        ]}
       />
     </main>
   );
