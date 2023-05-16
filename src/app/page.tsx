@@ -6,7 +6,9 @@ export default async function Home() {
   const memeTemplatesReq = await fetch("http://localhost:3000/api/templates");
   const memeTemplates = (await memeTemplatesReq.json()) as MemeTemplate[];
 
-  const memesReq = await fetch("http://localhost:3000/api/memes");
+  const memesReq = await fetch("http://localhost:3000/api/memes", {
+    cache: "no-cache",
+  });
   const memes = (await memesReq.json()) as Meme[];
 
   return (

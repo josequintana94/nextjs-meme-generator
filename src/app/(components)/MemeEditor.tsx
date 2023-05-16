@@ -1,6 +1,10 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { useTransition } from "react";
+
 import { MemeTemplate } from "../(data)/types";
+
 import MemeDisplay from "./MemeDisplay";
 
 const textValues = (template: MemeTemplate) =>
@@ -25,8 +29,28 @@ const MemeEditor = ({ templates }: { templates: MemeTemplate[] }) => {
 
   const values = watch("values");
 
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  const onSubmit = async (data: {
+    template: string;
+    values: Record<string, string>;
+  }) => {
+    await fetch("http://localhost:3000/api/memes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ template: data.template, values: data.values }),
+    });
+
+    startTransition(() => {
+      router.refresh();
+    });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid xs:grid-cols-1 md:grid-cols-[60%_40%]">
         <MemeDisplay {...template} values={values} />
         <div className="pl-2 text-black">
@@ -61,6 +85,15 @@ const MemeEditor = ({ templates }: { templates: MemeTemplate[] }) => {
               </div>
             </div>
           ))}
+          <div className="flex justify-end">
+            <button
+              className="btn btn-accent mt-5 min-w-[200px]"
+              type="submit"
+              disabled={isPending}
+            >
+              Let&apos;s go!
+            </button>
+          </div>
         </div>
       </div>
     </form>
