@@ -1,4 +1,5 @@
 import MemeDisplay from "./(components)/MemeDisplay";
+import MemeEditor from "./(components)/MemeEditor";
 import { MemeTemplate, Meme } from "./(data)/types";
 
 export default async function Home() {
@@ -10,6 +11,7 @@ export default async function Home() {
 
   return (
     <main className="max-w-[1200px] mx-auto">
+      <MemeEditor templates={memeTemplates} />
       <h2 className="text-3xl font-bold mt-5 text-white">Memes</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-2">
         {memes.map((meme) => (
