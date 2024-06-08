@@ -94,6 +94,37 @@ const memeTemplates: MemeTemplate[] = [
       },
     ],
   },
+  {
+    id: "10guy",
+    background: {
+      src: "/10guylogo.jpg",
+      width: 1200,
+      height: 1100,
+      alt: "10 Guy",
+    },
+    textareas: [
+      {
+        id: "top",
+        top: 0,
+        left: 0,
+        width: 1200,
+        height: 550,
+        text: "Top",
+        fontSize: 100,
+        color: "black",
+      },
+      {
+        id: "bottom",
+        top: 550,
+        left: 0,
+        width: 1200,
+        height: 550,
+        text: "Bottom",
+        fontSize: 100,
+        color: "black",
+      },
+    ],
+  },
 ];
 
 export default memeTemplates;

@@ -30,7 +30,7 @@ const MemeDisplay = ({
 }) => {
   const [memeRef, { width }] = useElementSize();
 
-  const ratio = width / background.width;
+  const ratio = width ? width / background.width : 0;
 
   return (
     <div className="relative" ref={memeRef}>

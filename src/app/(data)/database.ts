@@ -18,6 +18,13 @@ const database: Meme[] = [
       bottom: "JavaScript",
     },
   },
+  {
+    id: "3",
+    template: "disaster-girl",
+    values: {
+      tagline: "When you see the code",
+    },
+  },
 ];
 
 export default database;
